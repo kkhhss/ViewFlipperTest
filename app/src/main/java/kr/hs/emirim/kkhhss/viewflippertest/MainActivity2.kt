@@ -6,21 +6,22 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ViewFlipper
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
 
-        var btnPrev = findViewById<Button>(R.id.btnPrev)
-        var btnNext = findViewById<Button>(R.id.btnNext)
+        var btnStart = findViewById<Button>(R.id.btnStart)
+        var btnStop = findViewById<Button>(R.id.btnStop)
         var flipper = findViewById<ViewFlipper>(R.id.flipper)
+        flipper.flipInterval = 1000
 
-        btnPrev.setOnClickListener{
-            flipper.showPrevious()
+        btnStart.setOnClickListener{
+            flipper.startFlipping()
         }
-        btnNext.setOnClickListener{
-            flipper.showNext()
+        btnStop.setOnClickListener{
+            flipper.stopFlipping()
         }
     }
 }
